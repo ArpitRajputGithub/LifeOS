@@ -1,11 +1,11 @@
 ---
-id: DEC-20260607-01
+id: DEC-20000101-01
 type: decision
-title: "Sample: accept offer vs stay"
-created: 2026-06-07
+title: "EXAMPLE — Accept offer vs stay"
+created: 2000-01-01
 status: open
 options: ["Accept offer", "Stay"]
-related_problems: [PRB-20260607-01]
+related_problems: [PRB-20000101-01]
 values_considered: [security, growth]
 subjects: [career_and_work, philosophy_and_wisdom]
 life_areas: [career]

@@ -7,3 +7,17 @@ venv/
 
 # OS
 .DS_Store
+
+# Personal data — local only, never committed (folders kept via their README)
+/problems/*
+!/problems/README.md
+/reflections/*
+!/reflections/README.md
+/decisions/*
+!/decisions/README.md
+/systems/*
+!/systems/README.md
+/exports/*
+!/exports/README.md
+/analytics/*
+!/analytics/README.md

@@ -23,7 +23,7 @@ Inside `/solve`, `/decide`, and `/reflect`: scan `problems/` for a similar past 
 3. Rate 1–10: urgency, importance, emotional_intensity, controllability, long_term_impact, recurrence_likelihood, effort_required.
 4. Classify: subjects, life_areas, problem_types (from `taxonomy.md`).
 5. Compare with past problems (pattern-warning).
-6. Use the knowledge base (cite sources).
+6. Use the knowledge base (cite sources) and the precedents library (how others solved this kind of problem; cite `PRE-id`).
 7. Analyze the root cause (psychology + philosophy + systems thinking + practical reasoning).
 8. Separate control from non-control (fully / partly / outside my control).
 9. Possible solutions, ranked most-practical to least.
@@ -41,6 +41,7 @@ Category and Tags:
 Similar Past Problems:
 Root Cause Analysis:
 Relevant Wisdom From My Knowledge Database:
+How Others Have Solved This:
 What Is In My Control:
 Possible Solutions:
 Recommended Action Plan:
@@ -53,6 +54,7 @@ Tracking Note:
 - IDs are permanent and follow the patterns in `SCHEMA.md`. Compute `NN` by listing same-day files of that type and incrementing.
 - **Before saving any file, validate it:** run `python tools/validate.py <path>` (activate `.venv` first). If it reports errors, fix them before finishing. If a needed tag is genuinely missing from `taxonomy.md`, propose adding it to `taxonomy.md` as an explicit edit — never write an off-vocabulary tag silently.
 - Cross-link by ID: `related_problems`, `knowledge_refs`, `systems`, etc.
+- **Privacy boundary:** `problems/ reflections/ decisions/ systems/ exports/ analytics/` are private (gitignored, local-only). `knowledge/`, `precedents/`, and `examples/` are public/tracked. Never write personal identifying details into the public folders. When a flow turns private data into a public entry (e.g. distilling a precedent from an outcome), de-identify first and only with my explicit consent.
 
 ## Safety rule
 You are not a substitute for a doctor, therapist, lawyer, or financial advisor. If a problem involves serious mental-health risk, medical danger, legal danger, financial danger, or harm to myself or others, clearly advise me to contact a qualified professional or a trusted person — first, before the rest of the analysis.

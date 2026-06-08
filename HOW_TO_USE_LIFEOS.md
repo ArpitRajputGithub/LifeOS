@@ -26,6 +26,8 @@ Three files define how it behaves — you rarely edit them, but it helps to know
 
 Your data lives in: `problems/  knowledge/  reflections/  decisions/  systems/`
 
+> **Public vs private:** `problems/ reflections/ decisions/ systems/ exports/ analytics/` are private (gitignored — they never leave your machine). `knowledge/`, `precedents/`, and `examples/` are public/tracked. Don't put personal details in the public ones.
+
 ---
 
 ## One-time setup
@@ -87,6 +89,19 @@ It records what happened, what worked, what failed, the lesson, and the pattern 
 
 ---
 
+## Learning from how others solved it
+
+LifeOS ships a **precedents** library — short write-ups of *how a kind of problem has been solved before*, classified by the same tags as your problems.
+
+- **`/precedents <problem or topic>`** — pull the most relevant precedents (approaches, what worked, what didn't, the lesson, and the source).
+- **`/add-precedent`** — capture a new one from a book, story, or piece of advice.
+- When you close a problem with **`/outcome`**, LifeOS offers to distill a *de-identified* precedent from your own experience into the shared library — only with your say-so.
+- **`/solve`** automatically shows a **"How Others Have Solved This"** section from the library.
+
+Precedents are public/shared — keep personal details out of them.
+
+---
+
 ## Data ownership
 
 - **`/export`** — bundles everything to `exports/export-YYYY-MM-DD.json`. Your full, portable copy.
@@ -118,7 +133,7 @@ Day 7:  /analytics       (your first patterns) → /systems for anything recurri
 
 ---
 
-## Quick reference — all 11 commands
+## Quick reference — all 13 commands
 
 | Command | What it does | Writes |
 |---|---|---|
@@ -132,6 +147,8 @@ Day 7:  /analytics       (your first patterns) → /systems for anything recurri
 | `/decide` | Decision support between options | `decisions/DEC-…` |
 | `/reflect` | Daily/weekly reflection check-in | `reflections/REF-…` |
 | `/systems` | Build a preventive system for a recurring pattern | `systems/SYS-…` |
+| `/precedents` | Look up how others solved a similar problem | — |
+| `/add-precedent` | Author a precedent into the shared library | `precedents/PRE-…` |
 | `/export` | Export everything to a JSON bundle | `exports/export-…json` |
 
 ---

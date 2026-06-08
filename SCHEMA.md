@@ -16,6 +16,7 @@ Every entity file is a Markdown file with YAML frontmatter (the structured "row"
 | reflection | `REF-YYYYMMDD-NN` | `REF-20260607-01` |
 | decision | `DEC-YYYYMMDD-NN` | `DEC-20260607-01` |
 | system | `SYS-YYYYMMDD-NN` | `SYS-20260607-01` |
+| precedent | `PRE-YYYYMMDD-NN` | `PRE-20260608-01` |
 | action (inline child) | `ACT-<problemID>-NN` | `ACT-PRB-20260607-01-01` |
 | outcome (inline child) | `OUT-<problemID>-NN` | `OUT-PRB-20260607-01-01` |
 
@@ -23,7 +24,7 @@ Every entity file is a Markdown file with YAML frontmatter (the structured "row"
 
 ## problem  (type: problem)
 **Required:** `id, type, title, created, updated, status, subjects, life_areas, problem_types, deeper_issue, ratings`
-**Optional:** `emotions, people, tags, root_cause, related_problems, knowledge_refs, systems, actions, outcomes, immediate_next_action`
+**Optional:** `emotions, people, tags, root_cause, related_problems, knowledge_refs, precedent_refs, systems, actions, outcomes, immediate_next_action`
 - `status` ∈ problem_status. `subjects` ⊆ subjects. `life_areas` ⊆ life_areas. `problem_types` ⊆ problem_types. `deeper_issue` ∈ deeper_issue. `emotions` ⊆ emotions.
 - `ratings` is a map with keys: `urgency, importance, emotional_intensity, controllability, long_term_impact, recurrence_likelihood, effort_required`, each integer 1–10.
 - `actions[]` items: `id, what, why, when, difficulty (∈difficulty), expected_result, status (∈action_status), updated`.
@@ -53,3 +54,10 @@ Every entity file is a Markdown file with YAML frontmatter (the structured "row"
 **Optional:** `prevents_problem_types, addresses_patterns, source_problems, subjects, life_areas, tags`
 - `status` ∈ system_status. `kind` ∈ system_kind. `prevents_problem_types` ⊆ problem_types. `subjects` ⊆ subjects.
 - **Body:** the system — trigger, the rule/steps, how to follow it, how to review it.
+
+## precedent  (type: precedent)
+**Required:** `id, type, title, created, subjects, problem_types, source`
+**Optional:** `life_areas, deeper_issue, tags`
+- `subjects` ⊆ subjects. `problem_types` ⊆ problem_types. `life_areas` ⊆ life_areas. `deeper_issue` ∈ deeper_issue. `source` is an attribution string (book, person, framework, "Distilled from lived experience", or a contributor).
+- **Body sections (in order):** Situation, Approaches Tried, What Worked, What Didn't, Lesson / Principle, Source & Attribution.
+- **Public/shared:** precedents live in `precedents/` (tracked). Never include personal identifying details.

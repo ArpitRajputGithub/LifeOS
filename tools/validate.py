@@ -15,6 +15,7 @@ ID_PATTERNS = {
     "reflection": r"^REF-\d{8}-\d{2}$",
     "decision": r"^DEC-\d{8}-\d{2}$",
     "system": r"^SYS-\d{8}-\d{2}$",
+    "precedent": r"^PRE-\d{8}-\d{2}$",
 }
 
 REQUIRED = {
@@ -24,6 +25,7 @@ REQUIRED = {
     "reflection": ["id", "type", "created", "period"],
     "decision": ["id", "type", "title", "created", "status", "options"],
     "system": ["id", "type", "title", "created", "status", "kind"],
+    "precedent": ["id", "type", "title", "created", "subjects", "problem_types", "source"],
 }
 
 # entity field -> taxonomy list key
@@ -137,7 +139,7 @@ def iter_files(paths):
 
 def main(argv):
     tax = load_taxonomy()
-    targets = argv[1:] or ["problems", "knowledge", "reflections", "decisions", "systems"]
+    targets = argv[1:] or ["problems", "knowledge", "reflections", "decisions", "systems", "precedents"]
     targets = [os.path.join(ROOT, t) if not os.path.isabs(t) else t for t in targets]
     all_errors = []
     for fpath in iter_files(targets):

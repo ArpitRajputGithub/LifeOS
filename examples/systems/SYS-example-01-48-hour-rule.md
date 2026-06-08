@@ -1,13 +1,13 @@
 ---
-id: SYS-20260607-01
+id: SYS-20000101-01
 type: system
-title: "48-hour rule for big decisions"
-created: 2026-06-07
+title: "EXAMPLE — 48-hour rule for big decisions"
+created: 2000-01-01
 status: active
 kind: rule
 prevents_problem_types: [decision]
 addresses_patterns: [overthinking]
-source_problems: [PRB-20260607-01]
+source_problems: [PRB-20000101-01]
 subjects: [systems_and_thinking, career_and_work]
 life_areas: [career]
 tags: [decision_making]

@@ -14,6 +14,7 @@ FOLDERS = {
     "reflections": "reflections",
     "decisions": "decisions",
     "systems": "systems",
+    "precedents": "precedents",
 }
 
 

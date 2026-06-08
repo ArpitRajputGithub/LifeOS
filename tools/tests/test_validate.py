@@ -44,3 +44,19 @@ def test_bad_outcome_flags_missing_id_and_date():
 
 def test_taxonomy_loads_15_subjects():
     assert len(TAX["subjects"]) == 15
+
+
+def test_good_precedent_has_no_errors():
+    assert errs("good_precedent.md") == []
+
+
+def test_bad_precedent_flags_bad_id():
+    assert any("does not match" in e for e in errs("bad_precedent.md"))
+
+
+def test_bad_precedent_flags_missing_source():
+    assert any("missing required field 'source'" in e for e in errs("bad_precedent.md"))
+
+
+def test_bad_precedent_flags_off_vocab_problem_type():
+    assert any("not_a_real_type" in e for e in errs("bad_precedent.md"))
